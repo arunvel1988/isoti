@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: arun
+spec:
+  rules:
+  - host: arun.example.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: arun1
+          servicePort: 8000
+      

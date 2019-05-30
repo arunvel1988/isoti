@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: arun123
+spec:
+  tls:
+  - hosts:
+    - arun.example.com
+    secretName: tls-secret
+  rules:
+  - host: arun.example.com  
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: arun1
+          servicePort: 8000
+      

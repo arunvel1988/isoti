@@ -1,0 +1,19 @@
+apiVersion: apps/v1beta2
+kind: ReplicaSet
+metadata:
+  name: pep
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pep
+  template:
+    metadata:
+      labels:
+        app: pep
+    spec:
+      containers:
+      - name: arunvel
+        image: arunvel1988/arun-nodejs
+        ports:
+        - containerPort: 8080

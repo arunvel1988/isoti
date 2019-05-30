@@ -1,0 +1,19 @@
+apiVersion: apps/v1beta2
+kind: DaemonSet
+metadata:
+  name: arun-ds
+spec:
+  selector:
+    matchLabels:
+      app: arun-ds
+  template:
+    metadata:
+      labels:
+        app: arun-ds
+    spec:
+      nodeSelector:
+        disk: ssd
+      containers:
+      - name: main
+        image: arunvel1988/arun-nodejs
+
